@@ -1,6 +1,6 @@
 from flask import render_template,request,redirect,url_for
 from . import main
-from ..requests import get_sources,get_articles
+from ..request import get_sources,get_articles
 from ..models import Sources
 
 #views
@@ -25,4 +25,4 @@ def articles(id):
 	articles = get_articles(id)
 	title = f'NH | {id}'
 
-	return render_template('articles.html',title= title,articles = articles)
+	return render_template('article.html',title= title,articles = articles)
